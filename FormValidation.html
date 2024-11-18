@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit=" return data()" action="action.html">
+        UserId:<input type="email" id="n1"><br></br>
+        Password:<input type="password" id="n2"><br></br>
+        Confirm Password:<input type="password" id="n3"><br></br>
+        <input type="submit" >
+    </form>
+
+    <script>
+        function data()
+        {
+        var a = document.getElementById('n1').value
+        var b = document.getElementById('n2').value
+        var c = document.getElementById('n3').value
+
+        if(a==""||b==""||c=="")
+        {
+            alert("All fields are mandatory")
+            return false
+        }
+        else if(b!=c)
+        {
+            alert("Please enter same password")
+            return false
+        }else
+        {
+            return true
+
+        }
+
+        }
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb Toggle</title>
+</head>
+<body>
+    <h1 id="title">One bulb at a time</h1>
+    
+    <!-- Bulb images -->
+    <img id="bulb1" src="bulb_on.png" alt="Bulb On" style="width:100px;height:200px;">
+    <img id="bulb2" src="bulb_off.png" alt="Bulb Off" style="width:100px;height:200px;">
+    
+    <script>
+        document.getElementById('bulb1').addEventListener('click', swapBulbs);
+        document.getElementById('bulb2').addEventListener('click', swapBulbs);
+        
+        function swapBulbs() {
+            let bulb1 = document.getElementById('bulb1');
+            let bulb2 = document.getElementById('bulb2');
+            
+            // Swap the src attributes of the two images
+            let tempSrc = bulb1.src;
+            bulb1.src = bulb2.src;
+            bulb2.src = tempSrc;
+        }
+    </script>
+</body>
+</html>
+
+    
+
+ 

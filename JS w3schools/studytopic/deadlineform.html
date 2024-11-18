@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Deadline Calculator</title>
+</head>
+<body>
+    <h1>Project Deadline Calculator</h1>
+    <form id="deadlineForm">
+        <label for="days">Enter the number of days allotted for the project:</label><br><br>
+        <input type="number" id="days" name="days" required><br><br>
+        <input type="submit" value="Calculate Deadline">
+    </form>
+
+    <p id="result"></p>
+
+    <script>
+        document.getElementById('deadlineForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get the number of days from the input
+            const days = parseInt(document.getElementById('days').value);
+
+            // Get the current date
+            const currentDate = new Date();
+
+            // Calculate the deadline
+            const deadlineDate = new Date();
+            deadlineDate.setDate(currentDate.getDate() + days);
+
+            // Format the deadline date
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const formattedDeadline = deadlineDate.toLocaleDateString(undefined, options);
+
+            // Display the result
+            document.getElementById('result').innerText = `The project deadline is: ${formattedDeadline}`;
+        });
+    </script>
+</body>
+</html>

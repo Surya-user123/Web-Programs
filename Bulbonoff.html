@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="title">One bulb at a time</h1>
+    <img id="bulb1" src="Images/BulbOn.PNG" alt="Bulb On">
+    <img id="bulb2" src="Images/BulbOff.PNG" alt="Bulb Off">
+
+    <script>
+        const bulb1 = document.getElementById('bulb1');
+        const bulb2 = document.getElementById('bulb2');
+
+        bulb1.addEventListener('click', swapImages);
+        bulb2.addEventListener('click', swapImages);
+
+        function swapImages() {
+            const tempSrc = bulb1.src;
+            bulb1.src = bulb2.src;
+            bulb2.src = tempSrc;
+        }
+    </script>
+</body>
+</html>
+
+
